@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reino de Lirion</title>
+
+    <!-- Fonte medieval -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet" />
+
     <style>
       * {
         margin: 0;
@@ -12,16 +16,18 @@
       }
 
       body {
-        font-family: 'Segoe UI', sans-serif;
+        font-family: 'Cinzel', serif;
         color: #ffffff;
         height: 100vh;
         overflow: hidden;
         position: relative;
         text-align: center;
         background-color: #0d0c1d;
+        background-image: url('assets/img/lirion.fundo.png');
+        background-size: cover;
+        background-position: center;
       }
 
-      /* Camada da neblina */
       .fog {
         position: absolute;
         top: 0;
@@ -32,7 +38,7 @@
         background-repeat: repeat;
         opacity: 0.3;
         animation: moveFog 60s linear infinite;
-        z-index: 1;
+        z-index: 0;
       }
 
       @keyframes moveFog {
@@ -44,10 +50,9 @@
         }
       }
 
-      /* Conteúdo por cima da neblina */
       .content {
         position: relative;
-        z-index: 2;
+        z-index: 1;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -92,19 +97,52 @@
         transition: background-color 0.3s ease, transform 0.3s ease;
         box-shadow: 0 0 10px rgba(166, 142, 255, 0.5);
         text-decoration: none;
+        font-family: 'Cinzel', serif;
       }
 
       .btn:hover {
         background-color: #a68eff;
         transform: scale(1.05);
       }
+
+      /* MENU FLUTUANTE */
+      .menu-flutuante {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .menu-flutuante a {
+        background-color: rgba(110, 99, 214, 0.8);
+        color: white;
+        padding: 10px 16px;
+        text-decoration: none;
+        font-family: 'Cinzel', serif;
+        border-radius: 8px;
+        box-shadow: 0 0 8px rgba(166, 142, 255, 0.6);
+        transition: background-color 0.3s ease;
+      }
+
+      .menu-flutuante a:hover {
+        background-color: #a68eff;
+      }
     </style>
   </head>
   <body>
-    <!-- Apenas a neblina -->
     <div class="fog"></div>
 
-    <!-- Conteúdo principal -->
+    <!-- MENU FLUTUANTE -->
+    <div class="menu-flutuante">
+      <a href="index.html">🏰 Início</a>
+      <a href="historia.html">📜 História</a>
+      <a href="curiosidades.html">✨ Curiosidades</a>
+      <a href="mapa.html">🗺️ Mapa</a>
+    </div>
+
     <div class="content">
       <audio autoplay loop>
         <source src="assets/audio/audiolirion.4.mp3" type="audio/mpeg" />

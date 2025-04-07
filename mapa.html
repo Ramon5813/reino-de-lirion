@@ -1,66 +1,147 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Mapa de Lirion</title>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Segoe UI', sans-serif;
-        background-color: #0d0c1d;
-        color: #ffffff;
-        text-align: center;
-      }
-      h1 {
-        margin-top: 40px;
-        color: #a68eff;
-      }
-      img {
-        margin-top: 20px;
-        max-width: 90%;
-        height: auto;
-        border: 4px solid #6e63d6;
-        border-radius: 12px;
-        box-shadow: 0 0 20px rgba(166, 142, 255, 0.3);
-      }
-      section {
-        max-width: 900px;
-        margin: 40px auto;
-        text-align: left;
-        padding: 20px;
-        background-color: #1b1a2e;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(166, 142, 255, 0.1);
-      }
-      h2, h3 {
-        color: #a68eff;
-      }
-      hr {
-        border: none;
-        border-top: 1px solid #6e63d6;
-        margin: 30px 0;
-      }
-      ul {
-        padding-left: 20px;
-      }
-    </style>
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <title>Mapa de Lirion</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <!-- 🎵 Áudio ambiente -->
-    <audio autoplay loop>
-      <source src="assets/audio/audiolirion.2.mp3" type="audio/mpeg" />
-      Seu navegador não suporta o elemento de áudio.
-    </audio>
-    
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d0c1d;
+      color: #ffffff;
+      text-align: center;
+      padding-bottom: 120px; /* espaço para o menu flutuante */
+      position: relative;
+      min-height: 100vh;
+    }
+
+    .fog {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 100%;
+      background-image: url('assets/img/neblina.png');
+      background-repeat: repeat;
+      opacity: 0.3;
+      animation: moveFog 60s linear infinite;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @keyframes moveFog {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-top: 40px;
+      color: #a68eff;
+      font-size: 2.4rem;
+      text-shadow: 0 0 15px #6e63d6;
+    }
+
+    img {
+      margin-top: 20px;
+      max-width: 90%;
+      height: auto;
+      border: 4px solid #6e63d6;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(166, 142, 255, 0.3);
+    }
+
+    section {
+      text-align: left;
+      background-color: #1b1a2e;
+      margin-top: 40px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(166, 142, 255, 0.1);
+    }
+
+    h2, h3 {
+      color: #a68eff;
+      margin-top: 20px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #6e63d6;
+      margin: 30px 0;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    /* Menu flutuante mágico */
+    .floating-menu {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      gap: 15px;
+      background-color: rgba(13, 12, 29, 0.8);
+      padding: 10px 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(166, 142, 255, 0.4);
+      backdrop-filter: blur(6px);
+    }
+
+    .floating-menu a {
+      background-color: #6e63d6;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 0 8px rgba(166, 142, 255, 0.5);
+    }
+
+    .floating-menu a:hover {
+      background-color: #a68eff;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Efeito de neblina -->
+  <div class="fog"></div>
+
+  <!-- 🎵 Áudio ambiente -->
+  <audio autoplay loop>
+    <source src="assets/audio/audiolirion.2.mp3" type="audio/mpeg" />
+    Seu navegador não suporta o elemento de áudio.
+  </audio>
+
+  <div class="content">
     <h1>🗺️ Mapa da Cidade de Lirion</h1>
     <img src="mapa-lirion.jpg" alt="Mapa de Lirion" />
 
     <section>
       <h2>🌍 O Novo Continente e a Cidade de Lirion</h2>
-      <p>Nos tempos modernos, quando o mundo parecia dividido entre céticos e crentes, um novo continente emergiu misteriosamente dos oceanos — um território oculto por séculos pelas forças da magia ancestral. Chamado apenas de <strong>Thareon</strong>, esse continente carrega vestígios antigos de todas as raças sobrenaturais, sendo um ponto de convergência para linhagens extintas, clãs esquecidos e magias primordiais.</p>
-      <p>No coração de Thareon, ergue-se <strong>Lirion</strong>, a cidade foco do RPG. Moderna, multicultural e dividida em zonas onde a convivência entre humanos e sobrenaturais é velada, porém constante. Lirion é governada por acordos secretos entre as raças, sustentando uma paz tênue enquanto tramas se desenrolam nas sombras. É nela que os jogadores começam suas jornadas, mergulhando num cenário de conspirações, alianças instáveis e segredos ancestrais que aguardam para serem revelados.</p>
+      <p>Nos tempos modernos... <strong>Thareon</strong> [...] <strong>Lirion</strong> [...]</p>
     </section>
 
     <section>
@@ -75,43 +156,42 @@
 
     <section>
       <h2>🗺️ Divisões da Cidade de Lirion</h2>
-
       <hr />
       <h3>1. 🌊 Costa de Eldora</h3>
-      <p>Zona turística com praias, bares e presença noturna de vampiros. Destaques: Praia da Meia-Noite, Bar "Lua de Sangue" (Dante Völk), loja <em>Essência do Mar</em> (Mirelda).</p>
+      <p>Zona turística com praias [...]</p>
 
       <hr />
       <h3>2. 🌳 Floresta de Mirval</h3>
-      <p>Habitat de lycans e druidas. Destaques: Clã dos Uivantes (Kael Morn), Pedra de Runa, loja <em>Fogo e Pele</em> (Raegor).</p>
+      <p>Habitat de lycans e druidas [...]</p>
 
       <hr />
       <h3>3. 🏙️ Distrito de Tyron</h3>
-      <p>Centro urbano com humanos e disfarces. Destaques: Universidade de Lirion, Café "Relicário", loja <em>Tecnomagia Lux</em> (Ithrael).</p>
+      <p>Centro urbano com humanos e disfarces [...]</p>
 
       <hr />
       <h3>4. 🔮 Vale de Azura</h3>
-      <p>Bairro místico com feiras e festivais. Destaques: Praça dos Ventos, loja <em>Encantos Eternos</em> (Yasmira).</p>
+      <p>Bairro místico com feiras [...]</p>
 
       <hr />
       <h3>5. 🏭 Setor Delta</h3>
-      <p>Área industrial e de mineração. Destaques: Fábrica de Nebrium, loja <em>Arcanotec Delta</em> (Grax).</p>
+      <p>Área industrial e de mineração [...]</p>
 
       <hr />
       <h3>6. ☠️ Bairro de Kaleb</h3>
-      <p>Zona perigosa dominada por renegados. Destaques: O Esfíncter, loja <em>Mercado das Sombras</em> (Nim-Ra).</p>
+      <p>Zona perigosa dominada por renegados [...]</p>
 
       <hr />
       <h3>7. 🕊️ Academia da Luz</h3>
-      <p>Complexo angelical dos Nefilins. Destaques: Sala do Véu, Mestre Uriel Saelis, loja <em>Aurora Branca</em>.</p>
+      <p>Complexo angelical dos Nefilins [...]</p>
 
       <hr />
       <h3>🏫 Instituto Callebrian</h3>
-      <p>Escola mista entre humanos e sobrenaturais. Destaques: Diretora Helena Durand, Clube de Literatura liderado por um vampiro disfarçado.</p>
+      <p>Escola mista entre humanos e sobrenaturais [...]</p>
     </section>
 
     <section>
       <h2>🧭 Lojas Restritas por Raça – Acesso Especial</h2>
-      <p>Essas lojas estão <strong>marcadas no mapa oficial</strong>, mas <strong>somente jogadores da raça correspondente</strong> podem acessá-las, mediante sistema especial de troca, favores ou moedas únicas.</p>
+      <p>Essas lojas estão <strong>marcadas no mapa oficial</strong> [...]</p>
 
       <hr />
       <h3>🌀 Tecnomagia Lux (Nefilins)</h3>
@@ -125,29 +205,4 @@
       <h3>🔧 Arcanotec Delta (Renegados)</h3>
       <ul>
         <li><strong>Local:</strong> Subsolo do Setor Delta</li>
-        <li><strong>Proprietário:</strong> Grax</li>
-        <li><strong>Itens:</strong> Runas industriais, sucatas mágicas, maldições tecnológicas</li>
-      </ul>
-
-      <hr />
-      <h3>🌟 Aurora Branca (Nefilins Guardiões)</h3>
-      <ul>
-        <li><strong>Local:</strong> Academia da Luz</li>
-        <li><strong>Proprietário:</strong> Ordem dos Mestres da Luz / Uriel Saelis</li>
-        <li><strong>Itens:</strong> Armas de luz, encantamentos, capas sagradas</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>⚠️ Regras para Acesso</h2>
-      <ul>
-        <li><strong>Sistema de Troca Específico:</strong> baseado em relíquias, favores ou feitos por raça</li>
-        <li><strong>Entrada Restrita:</strong> apenas personagens com histórico comprovado</li>
-        <li><strong>NPCs Inflexíveis:</strong> não negociam com outras raças</li>
-      </ul>
-
-      <h3>📝 Observação Final</h3>
-      <p>O mundo de Lirion está em constante expansão. Novos locais, personagens e histórias poderão ser criados pelos jogadores conforme a trama evolui.</p>
-    </section>
-  </body>
-</html>
+        <li><strong>Proprietário

@@ -111,10 +111,41 @@
         color: #0d0c1d;
         transform: scale(1.05);
       }
+
+      /* MENU FLUTUANTE */
+      .menu-flutuante {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: rgba(30, 25, 60, 0.8);
+        border-radius: 12px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        box-shadow: 0 0 12px rgba(166, 142, 255, 0.5);
+        z-index: 100;
+      }
+
+      .menu-flutuante a,
+      .menu-flutuante button {
+        background: none;
+        border: none;
+        color: #a68eff;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+        text-decoration: none;
+      }
+
+      .menu-flutuante a:hover,
+      .menu-flutuante button:hover {
+        transform: scale(1.2);
+        color: #ffffff;
+      }
     </style>
   </head>
   <body>
-    <!-- Neblina no fundo -->
     <div class="neblina"></div>
 
     <h1>Bem-vindo ao Reino de Lirion</h1>
@@ -123,20 +154,26 @@
     </p>
 
     <a href="reino.html" class="btn-explorar">✨ Explorar o Reino</a>
-
-    <!-- Botão mágico para ativar o som -->
     <button class="btn-som" id="botao-som">🔊 Desperte os Sons de Lirion</button>
 
-    <!-- Áudio -->
-    <audio id="audio-lirion.1S" loop>
+    <audio id="audio-lirion" loop>
       <source src="assets/audio/audiolirion.6.mp3" type="audio/mpeg" />
       Seu navegador não suporta o elemento de áudio.
     </audio>
 
+    <!-- MENU FLUTUANTE -->
+    <div class="menu-flutuante">
+      <a href="index.html" title="Início">🏰</a>
+      <a href="reino.html" title="História">📜</a>
+      <a href="racas.html" title="Raças">🧛‍♂️</a>
+      <a href="titulos.html" title="Títulos">🌟</a>
+      <a href="cronicas.html" title="Crônicas">🌒</a>
+      <button onclick="document.getElementById('audio-lirion').paused ? document.getElementById('audio-lirion').play() : document.getElementById('audio-lirion').pause();" title="Som">🔊</button>
+    </div>
+
     <script>
       document.getElementById('botao-som').addEventListener('click', () => {
         const audio = document.getElementById("audio-lirion");
-
         audio.play().then(() => {
           console.log("Áudio iniciado com sucesso.");
         }).catch((error) => {
