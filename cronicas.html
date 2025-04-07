@@ -1,106 +1,252 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🌒 Crônicas da Guerra do Graal – Lendas dos Antigos em Lirion</title>
-    <style>
-      body {
-        margin: 0;
-        padding: 20px;
-        font-family: 'Segoe UI', sans-serif;
-        background-color: #0d0c1d;
-        color: #ffffff;
-        background-image: url('fundo-estrelado.jpg');
-        background-size: cover;
-        background-position: center;
-        line-height: 1.6;
-      }
+<style>
+  body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0d0c1d;
+    color: #ffffff;
+    background-image: url('fundo-estrelado.jpg');
+    background-size: cover;
+    background-position: center;
+    line-height: 1.6;
+  }
 
-      .container {
-        max-width: 900px;
-        margin: 0 auto;
-        background-color: rgba(20, 20, 30, 0.85);
-        padding: 30px;
-        border-radius: 15px;
-        box-shadow: 0 0 20px rgba(166, 142, 255, 0.3);
-      }
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: rgba(20, 20, 30, 0.85);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(166, 142, 255, 0.3);
+  }
 
-      h1, h2, h3, h4 {
-        color: #a68eff;
-        text-shadow: 0 0 10px #6e63d6;
-      }
+  h1, h2 {
+    color: #a68eff;
+    text-shadow: 0 0 10px #6e63d6;
+  }
 
-      p, blockquote, li {
-        color: #dcdcdc;
-        text-align: justify;
-        margin-bottom: 20px;
-      }
+  p {
+    color: #dcdcdc;
+    text-align: justify;
+    margin-bottom: 20px;
+  }
 
-      blockquote {
-        font-style: italic;
-        border-left: 3px solid #a68eff;
-        padding-left: 15px;
-        margin: 20px 0;
-      }
+  .separador {
+    text-align: center;
+    font-size: 2rem;
+    color: #6e63d6;
+    margin: 40px 0;
+  }
 
-      .btn-voltar {
-        display: inline-block;
-        margin-top: 30px;
-        background-color: #6e63d6;
-        color: white;
-        padding: 12px 24px;
-        font-size: 1rem;
-        border: none;
-        border-radius: 8px;
-        text-decoration: none;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-      }
+  .lenda {
+    background-color: rgba(110, 99, 214, 0.1);
+    border-left: 4px solid #a68eff;
+    padding: 15px;
+    margin: 25px 0;
+    font-style: italic;
+    color: #e2e2ff;
+  }
 
-      .btn-voltar:hover {
-        background-color: #a68eff;
-        transform: scale(1.05);
-      }
+  blockquote {
+    background-color: rgba(166, 142, 255, 0.1);
+    border-left: 5px solid #a68eff;
+    padding: 20px;
+    margin-top: 40px;
+    text-align: center;
+    border-radius: 10px;
+  }
 
-      ul {
-        padding-left: 20px;
-      }
+  .btn-voltar {
+    display: inline-block;
+    margin: 10px;
+    background-color: #6e63d6;
+    color: white;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
 
-      li::marker {
-        color: #a68eff;
-      }
+  .btn-voltar:hover {
+    background-color: #a68eff;
+    transform: scale(1.05);
+  }
+</style>
+</head>
+<body>
+<!-- 🎵 Áudio ambiente -->
+<audio autoplay loop>
+  <source src="assets/audio/audiolirion.5.mp3" type="audio/mpeg" />
+  Seu navegador não suporta o elemento de áudio.
+</audio>
+  </style>
+</head>
+<body>
+  <h1>🌒 Crônicas da Guerra do Graal – Lendas dos Antigos em Lirion</h1>
 
-      .legado {
-        font-weight: bold;
-        color: #a68eff;
-      }
+  <p>Durante a mítica Guerra do Graal, quando os véus entre os mundos foram dilacerados e a magia sangrou pela terra, surgiram líderes lendários que marcaram cada raça com um símbolo, uma memória e uma maldição. Esses líderes tornaram-se arquétipos — vivos ou mortos, lembrados ou temidos, suas presenças ainda ecoam em Lirion, o continente de Thareon.</p>
 
-      .lenda {
-        margin-top: 40px;
-      }
+  <p>Cada título sagrado, como o Trono Carmesim, a Lua Antiga, ou o Portador da Luz, não é apenas um cargo: é o reflexo de um espírito ancestral que pode renascer no sangue dos escolhidos.</p>
 
-      .separador {
-        margin: 40px 0;
-        border-top: 1px solid #6e63d6;
-      }
+  <h2>🌌 Lendas em Lirion: O Retorno dos Ecos</h2>
+  <p>Nos tempos atuais, em Lirion, existem boatos de que os ecos espirituais desses líderes antigos foram reativados com o reaparecimento de Thareon. Relíquias, armas e marcas em descendentes começaram a surgir. Cada facção busca reencarnar, invocar ou até replicar os feitos de seu líder ancestral.</p>
 
-      .icone {
-        margin-right: 5px;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- 🎵 Áudio ambiente -->
-    <audio autoplay loop>
-      <source src="assets/audio/audiolirion.6.mp3" type="audio/mpeg" />
-      Seu navegador não suporta o elemento de áudio.
-    </audio>
+  <p>A cidade tornou-se um campo de disputa silenciosa entre clãs, linhagens e forças que querem retomar o legado dos Antigos — para reerguer impérios, iniciar novas guerras… ou impedir que o Graal desperte outra vez.</p>
 
-    <div class="container">
-      <!-- TODO: CONTEÚDO HTML INSERIDO AQUI (manteve estrutura anterior) -->
-      <!-- Conteúdo completo fornecido pelo usuário mantido sem alterações -->
-    </div>
-  </body>
+  <div class="divider"></div>
+  
+  <!-- Aqui continuaremos com todo o conteúdo das lendas -->
+   <!-- Aqui continuaremos com todo o conteúdo das lendas -->
+
+<section class="lendas" id="lendas-graal">
+  <h2>📜 Lendas dos Antigos – A Guerra do Graal</h2>
+
+  <article>
+    <h3>🔮 Suprema da Primeira Chama – A Lenda de Lilithara, filha de Lilith</h3>
+    <p>Durante a Guerra do Graal, surgiu uma Suprema que dizia ser descendente direta de Lilith — seu nome era Lilithara. Ela comandava o maior coven já registrado, com treze Altas Bruxas em sincronia, e seu poder era tal que moldava a realidade ao seu desejo.</p>
+    <p>Lilithara tentou usar o Graal para restaurar o Véu, a barreira mágica entre os mundos, mas foi consumida pela própria ambição. Seus últimos feitiços ainda pairam em Lirion, protegendo locais mágicos e amaldiçoando traidores.</p>
+    <p>Dizem que a verdadeira Suprema só será reconhecida quando ouvir o sussurro de Lilithara em um espelho d'água ao luar. “Toda Suprema ouve a Mãe, mesmo quando não quer.”</p>
+  </article>
+
+  <article>
+    <h3>🔮 Bruxa – Nymera da Rosa Negra</h3>
+    <blockquote>“Tudo que floresce sangra. E tudo que sangra, floresce.”</blockquote>
+    <p>Nymera foi a mais poderosa bruxa da história, filha direta de uma linhagem que remonta à própria Lilith. Seu domínio era sobre maldições e pactos — ela selou exércitos inteiros com palavras sussurradas e gestos rituais.</p>
+    <p>Durante a Guerra do Graal, Nymera traiu seu próprio coven ao negociar com criaturas infernais para salvar parte das bruxas. Muitos a chamam de traidora, outros de salvadora. Ela desapareceu deixando um jardim envenenado que ainda floresce em Lirion, no centro da Zona Nula.</p>
+    <p><strong>Legado:</strong> Bruxas modernas a temem e a reverenciam. Algumas ainda seguem a doutrina “Rosa Negra”, que prega a liberdade a qualquer custo.</p>
+  </article>
+
+  <article>
+    <h3>🔮 Suprema da Primeira Chama – Lilithara & Nymera<br><em>Lenda Fundida: "A Rosa Negra da Mãe"</em></h3>
+    <p>Lilithara, filha de Lilith, liderava um coven de treze Altas Bruxas, moldando a realidade com seus feitiços. Já Nymera, herdeira direta de sua linhagem, rompeu com as tradições ao selar pactos sombrios para salvar parte das suas irmãs.</p>
+    <p>Ambas foram acusadas de traição e grandeza. Seus nomes são sussurrados no vento e refletidos nas águas dos espelhos lunares. A doutrina Rosa Negra — que prega a liberdade a qualquer custo — surgiu de seus legados entrelaçados.</p>
+    <p><strong>Legado:</strong> A verdadeira Suprema ouvirá a Mãe no silêncio e será julgada pela Rosa.</p>
+  </article>
+
+  <!-- Repetir estrutura para os demais blocos -->
+  <!-- Vampiros -->
+  <article>
+    <h3>🩸 Trono Carmesim – A Lenda do Primeiro Príncipe da Noite</h3>
+    <p>Diz-se que durante a Guerra do Graal, o primeiro a se assentar no Trono Carmesim foi um vampiro chamado Malkareth, o Vermelho. Ele foi criado diretamente por Caim e, ao contrário de outros vampiros, possuía o dom da profecia. Malkareth viu nas chamas do sangue o futuro das raças e decidiu reunir os Clãs da Noite para impedir que o Graal caísse nas mãos dos mortais.</p>
+    <p>Malkareth foi traído por seus próprios irmãos e desapareceu em uma noite vermelha como vinho. Mas uma lenda diz que “quando o sangue correr do céu, o Trono Carmesim se erguerá mais uma vez”. Os vampiros creem que todo novo Príncipe ou Princesa da Noite é escolhido por esse presságio — sangue que cai do céu.</p>
+  </article>
+
+  <article>
+    <h3>🧛‍♂️ Vampiro – Lorde Kael Varenth, o Sangue Inquebrantável</h3>
+    <blockquote>“O sangue é memória. E eu sou o que nunca será esquecido.”</blockquote>
+    <p>Kael Varenth foi o mais antigo dos vampiros desperto na Guerra do Graal. Seu domínio sobre a sanguealquimia o tornava praticamente invencível: ele podia manipular o próprio sangue como lâmina, armadura e veneno. Dizem que Kael selou um fragmento de sua essência no Cálice Negro do Graal, tornando-se parte de sua maldição.</p>
+    <p>Kael era um estrategista frio, mas acreditava na honra entre os imortais. Liderou o Clã Carmesim, o maior clã vampírico da época, e enfrentou as forças humanas da Igreja por mais de 200 anos. Seu desaparecimento é um mistério — alguns dizem que ele está adormecido em alguma cripta abaixo de Lirion.</p>
+    <p><strong>Legado:</strong> Os vampiros modernos o veneram como o “Primeiro General” e dizem que seu retorno iniciará a última guerra.</p>
+  </article>
+
+  <article>
+    <h3>🩸 Lenda Fundida: "O Sangue Inquebrantável"</h3>
+    <p>No coração da Noite, dois nomes disputam o mito da origem vampírica. Kael Varenth, o Sangue Inquebrantável, foi o mestre da sanguealquimia e estrategista frio do Clã Carmesim. Já Malkareth, o Vermelho, era um profeta gerado por Caim, que via o destino nas chamas do sangue.</p>
+    <p>Alguns dizem que Kael foi o avatar bélico da linhagem, enquanto Malkareth era seu espírito — corpo e alma de uma nação imortal. Ambos desapareceram misteriosamente, mas os vampiros ainda aguardam o dia em que o céu sangrará, sinalizando que o Trono Carmesim deve ser ocupado novamente por um Escolhido.</p>
+    <p><strong>Legado:</strong> Quando o sangue correr do céu, o General e o Profeta retornarão — como um só.</p>
+  </article>
+
+  <!-- Lobos -->
+  <article>
+    <h3>🐺 Alpha da Lua Antiga – A Lenda de Licaão, a Fera de Prata</h3>
+    <p>Durante a Guerra do Graal, os lobos foram liderados por Licaão, a Fera de Prata, um lobo ancestral nascido sob a primeira lua cheia após o retorno de Abel. Sendo o primeiro servo criado por Abel. Seu uivo era capaz de silenciar exércitos, e seu espírito era tão forte que dizia-se que nem os deuses ousavam enfrentá-la.</p>
+    <p>Licaão unificou as matilhas sob um só símbolo e liderou a investida final contra os humanos fanáticos. Ele morreu protegendo as filhas das bruxas em um ritual que quase selou o Graal. Sua tumba nunca foi encontrada, mas os lobos dizem que o verdadeiro Alpha herdará “o instinto de Licaão”, um chamado que une até os corações mais rebeldes.</p>
+  </article>
+
+  <article>
+    <h3>🐺 Lycan – Sigrid, a Mãe da Fúria</h3>
+    <blockquote>“Eu sou o uivo que ecoa antes da queda dos deuses.”</blockquote>
+    <p>Sigrid era uma loba de origem nórdica, com pelagem prateada e olhos dourados. Ela comandava os Clãs da Lua Quebrada, unindo matilhas rivais sob um só estandarte pela primeira vez. Sua fúria era lendária: quando transformada, podia invocar a força de uma alcateia inteira.</p>
+    <p>Durante a Guerra do Graal, Sigrid rompeu as linhas da Igreja numa noite de lua vermelha — um ataque que ficou conhecido como A Noite do Rasgo Celeste. Após a guerra, ela desapareceu nas montanhas de Thareon, mas muitos acreditam que seus descendentes ainda carregam sua linhagem.</p>
+    <p><strong>Legado:</strong> Os Lycans veem Sigrid como a “Alma Primordial”, e muitos clãs tentam traçar seu sangue até ela para reivindicar direito de liderança.</p>
+  </article>
+
+  <article>
+    <h3>🐺 Alpha da Lua Antiga – Licaão & Sigrid</h3>
+    <h4>Lenda Fundida: "A Fera de Prata, Mãe da Fúria"</h4>
+    <p>Licaão, a Fera de Prata, foi o primeiro Alfa unificador, nascido sob a lua do renascimento. Sua alma inquebrável tornou-se lenda. Sigrid, vinda das terras nórdicas, foi sua descendente espiritual — feroz, maternal, divina na fúria.</p>
+    <p>Durante a Noite do Rasgo Celeste, foi Sigrid quem rompeu as defesas da Igreja, mas os lobos creem que a força de Licaão ainda vive em todos os que uivam pela liberdade.</p>
+    <p><strong>Legado:</strong> Aquele que ouvir o uivo ancestral e responder com o coração será reconhecido como o novo Alpha.</p>
+  </article>
+
+  <!-- Serafins -->
+  <article>
+    <h3>👼 Serafim, Portador da Luz – A Lenda de Iscah, a Lança Branca</h3>
+    <p>No auge da guerra, o líder dos Guardiões era uma mulher chamada Iscah, conhecida como a Lança Branca. Ela foi escolhida por Miguel, o arcanjo, para ser a encarnação da justiça sobre a Terra. Sua presença queimava as sombras, e sua lança selou demônios e vampiros num só golpe.</p>
+    <p>Iscah recusou o uso do Graal para si, e com isso ganhou o respeito até mesmo dos lobos e das bruxas. Após a guerra, subiu aos céus numa coluna de luz — ou assim conta a lenda.</p>
+    <p>Reza-se que o Serafim verdadeiro será alguém tocado pela mesma luz e que os olhos de Iscah brilharão no escolhido, mesmo entre as trevas.</p>
+  </article>
+
+  <article>
+    <h3>😇 Nefilim – Aziel, o Portador da Lança Ardente</h3>
+    <blockquote>“Eu não caí. Eu fui lançado. E continuo lutando.”</blockquote>
+    <p>Aziel foi um dos primeiros Nefilins a empunhar a Lança de Lúcifer, uma arma feita da luz dos céus e das trevas do inferno. Ele era um guerreiro sereno, mas implacável, capaz de dividir exércitos com um único golpe.</p>
+    <p>Durante a guerra, Aziel liderou os Guardiões, sendo o único a enfrentar o próprio Arcanjo da Purificação, que havia enlouquecido. Após vencê-lo, Aziel foi consumido pela própria luz e desapareceu, mas dizem que sua lança está escondida nos subterrâneos de Lirion.</p>
+    <p><strong>Legado:</strong> Os Guardiões o veem como o “Equilíbrio Vivo”, símbolo de que a luz e as trevas podem coexistir. Muitos sonham em encontrar sua lança e reviver sua missão.</p>
+  </article>
+
+  <article>
+    <h3>👼 Serafim, Portador da Luz – Iscah & Aziel</h3>
+    <h4>Lenda Fundida: "A Lança Branca Ardente"</h4>
+    <p>Iscah, a Lança Branca, foi escolhida por Miguel para levar a justiça à Terra. Aziel, o Portador da Lança Ardente, foi lançado do céu como uma estrela cadente, trazendo consigo uma arma forjada da luz e trevas.</p>
+    <p>Alguns dizem que Iscah e Aziel foram dois aspectos do mesmo espírito: luz pura e equilíbrio sombrio. Ambos sumiram — um ascendeu, o outro desapareceu nas ruínas — mas sua lança ainda existe, enterrada em algum subterrâneo de Lirion.</p>
+    <p><strong>Legado:</strong> O Serafim renascerá quando a luz brilhar mesmo entre as trevas, e a lança for empunhada sem medo.</p>
+  </article>
+
+  <!-- Renegados -->
+  <article>
+    <h3>😈 Monarca dos Renegados – A Lenda de Orahm, o Coroado de Cinzas</h3>
+    <p>No centro do caos estava Orahm, o humano que ofereceu seu corpo ao próprio Leviatã para deter a Guerra do Graal. Ele se tornou o Monarca, um ser entre homem e demônio, aquele que ousou vestir a coroa feita de chamas e ossos. Ao contrário do que se esperava, Orahm não destruiu, ele organizou os Renegados, criou leis e rituais, e exigiu respeito por sua raça impura.</p>
+    <p>Mas seu reinado foi curto — traído por sua cria, desapareceu na terra cinzenta, uma dimensão selada até hoje. Os Renegados creem que o novo Monarca será marcado por sonhos com Orahm, e carregará a cicatriz de fogo que não queima.</p>
+  </article>
+
+  <article>
+    <h3>🔥 Renegado – Bel’Shaar, o Queimado</h3>
+    <blockquote>“Fui homem. Fui deus. Agora sou o fogo entre as eras.”</blockquote>
+    <p>Bel’Shaar era um humano corrompido por mais de sete demônios, um verdadeiro receptáculo do caos. Ele era um sacerdote antes de sua possessão, e, ao se entregar, tornou-se um dos seres mais poderosos da guerra — um exército em um único corpo.</p>
+    <p>Suas ações causaram o evento conhecido como O Dilúvio Carmesim, quando a cidade flutuante de Athariel foi destruída por suas chamas demoníacas. Ao fim da guerra, Bel’Shaar foi selado dentro de uma cratera de obsidiana, que até hoje borbulha nos limites de Lirion.</p>
+    <p><strong>Legado:</strong> Os Renegados o cultuam como um mártir do caos. Algumas seitas acreditam que sua libertação traria o fim da falsa ordem.</p>
+  </article>
+
+  <article>
+    <h3>😈 Monarca dos Renegados – Orahm & Bel’Shaar</h3>
+    <h4>Lenda Fundida: "O Coroado de Cinzas, Queimado pelos Deuses"</h4>
+    <p>Orahm, o homem que se ofereceu ao Leviatã, e Bel’Shaar, o sacerdote possuído por sete demônios. Dois rostos da mesma fúria humana. Orahm criou ordem entre os impuros, enquanto Bel’Shaar destruiu a cidade celestial no Dilúvio Carmesim.</p>
+    <p>Ambos desapareceram — um em uma terra cinzenta selada, o outro em uma cratera de obsidiana viva. Seitas dizem que o novo Monarca carregará uma cicatriz de fogo que não queima e será visitado por sonhos de ambos.</p>
+    <p><strong>Legado:</strong> Quando os ossos do mundo tremerem em silêncio, o Coroado retornará para queimar as eras.</p>
+  </article>
+  <section>
+    <h2>🌟 Em Lirion... o retorno das lendas?</h2>
+    <p>Em Lirion, muitos acreditam que a paz atual é apenas o silêncio antes da nova tempestade. E que os novos líderes das raças — mesmo que ainda não escolhidos — são os renascimentos das lendas.</p>
+    <ul>
+      <li>🩸 Os Vampiros esperam por um presságio de sangue nos céus.</li>
+      <li>🐺 Os Lobos ouvem o chamado distante da Fera de Prata.</li>
+      <li>🔮 As Bruxas observam seus espelhos, esperando a voz da Mãe.</li>
+      <li>😇 Os Nefilins seguem aqueles que brilham sem precisar de luz.</li>
+      <li>🔥 Os Renegados sonham com cinzas e fogo, e sabem que o trono vazio clama por um novo rei ou rainha.</li>
+    </ul>
+  </section>
+  
+  <section>
+    <h2>🌌 O Livro Sombrio de Thareon – A Profecia Unificada</h2>
+    <blockquote>
+      “Quando o céu sangrar, o uivo rasgar os véus, e o fogo brotar da terra negra...<br>
+      ...então os Ecos despertarão.<br>
+      Os escolhidos serão marcados.<br>
+      E a Guerra do Graal recomeçará.”
+    </blockquote>
+    <p>Em Lirion, o retorno de Thareon reativou relíquias esquecidas, armas ancestrais e linhagens adormecidas. Cada facção agora vive em tensão, à beira da ruptura, esperando o momento em que as Lendas dos Antigos voltem a caminhar entre os vivos.</p>
+    <p><strong>Quem serão os novos herdeiros dos arquétipos?<br>
+    Serão eles renascimentos… ou meras sombras?</strong></p>
+  </section>
+  
+
+</section>
+
+</body>
 </html>
+
 
 
