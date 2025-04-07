@@ -18,7 +18,7 @@
       position: relative;
       min-height: 100vh;
       padding: 20px;
-      padding-bottom: 120px; /* espaço extra para o menu flutuante */
+      padding-bottom: 120px;
     }
 
     .fog {
@@ -108,7 +108,6 @@
       line-height: 1.6;
     }
 
-    /* Menu flutuante mágico */
     .floating-menu {
       position: fixed;
       bottom: 20px;
@@ -142,10 +141,8 @@
   </style>
 </head>
 <body>
-  <!-- Neblina mágica -->
   <div class="fog"></div>
 
-  <!-- Áudio ambiente -->
   <audio autoplay loop>
     <source src="assets/audio/audiolirion.2.mp3" type="audio/mpeg" />
     Seu navegador não suporta o elemento de áudio.
@@ -154,43 +151,82 @@
   <div class="content">
     <h1>Curiosidades do Mundo de Lirion</h1>
 
-    <!-- Texto fixo -->
     <div class="chat-message">
       <div class="message-content">
         <h2>📜 Regras de Hereditariedade Sobrenatural & Transformação</h2>
-        <!-- Conteúdo permanece igual -->
-        <!-- ... (seu texto completo está aqui) ... -->
+        <p>Essas regras definem como ocorrem transformações e hereditariedade no mundo de Lirion. São base para equilíbrio e consistência do universo.</p>
+        <ul>
+          <li><strong>Bruxas:</strong> transmitem dons de forma genética e ritualística. Filhos herdam traços, mas precisam de iniciação para despertar magia.</li>
+          <li><strong>Vampiros:</strong> não têm filhos. Transformação é feita por mordida e troca de sangue. Consentimento espiritual é necessário.</li>
+          <li><strong>Lobos:</strong> podem nascer ou ser transformados. Transformação exige ritual tribal e aprovação da alcateia.</li>
+          <li><strong>Nefilins:</strong> são filhos entre humanos e entidades celestes. Raros e não podem ser criados artificialmente.</li>
+          <li><strong>Renegados:</strong> surgem por corrupção de seres. Hereditariedade não se aplica. Surgem do desequilíbrio espiritual ou rituais proibidos.</li>
+        </ul>
+        <p>Transformações forçadas sem história ou justificativa válida não são permitidas.</p>
       </div>
     </div>
 
-    <!-- Accordions -->
     <button class="accordion">🗺️ Lore e Nível Inicial (Importante para Jogadores)</button>
     <div class="panel">
-      <p>🧙‍♀️ Bruxas: podem viver séculos... (etc)</p>
+      <p>🧙‍♀️ Bruxas: podem viver séculos. Caso pareça jovem com 100+ anos, justifique com alguma história.</p>
+      <p>🧛‍♂️ Vampiros: imortais. Padrão de idade: até 1000 anos. Acima disso, precisa de história excepcional.</p>
+      <p>🐺 Lobos: vivem até 150 anos. Mais velhos que isso, precisam justificar se forem da linhagem de Caim.</p>
+      <p>👼 Nefilins: longevos. Acima de 150 anos exige conexão com Arkh’al ou guerras celestiais.</p>
+      <p>👹 Renegados: são imortais e monstruosos. Descreva aparência real e forma disfarçada.</p>
     </div>
 
     <button class="accordion">🛠️ Dicas de Criação de Personagem</button>
     <div class="panel">
-      <p>💠 Combine raça, origem e idade...</p>
+      <p>💠 Combine raça, origem e idade com um bom histórico e coerência no mundo de Lirion.</p>
+      <p>📜 Justifique poderes perdidos ou limitações com eventos importantes na vida do personagem.</p>
+      <p>⚖️ Evite exageros sem embasamento. Um personagem poderoso precisa de um bom motivo para estar no nível 1.</p>
     </div>
 
     <button class="accordion">🩸 Fraqueza dos Vampiros: Verbena</button>
     <div class="panel">
-      <p><strong>Descrição:</strong> A Verbena é uma planta...</p>
+      <p><strong>Descrição:</strong> A Verbena é uma planta que desestabiliza os vampiros.</p>
+      <ul>
+        <li>Contato direto: queima como ácido leve.</li>
+        <li>Ingestão: enfraquece os sentidos e bloqueia poderes.</li>
+        <li>Inalação prolongada: causa delírios e desmaios.</li>
+      </ul>
+      <p>Usos comuns: perfumes, colares, incensos, dardos de caçadores.</p>
+      <p><strong>Estaca de madeira:</strong><br>
+        Nível 1: mata.<br>
+        Níveis 2 e 3: dissecam o vampiro.<br>
+        Níveis 4 e 5: sem efeito.</p>
     </div>
 
     <button class="accordion">🐺 Fraqueza dos Lobos: Mata-lobos</button>
     <div class="panel">
-      <p><strong>Descrição:</strong> Planta venenosa bela...</p>
+      <p><strong>Descrição:</strong> Planta venenosa bela, porém mortal para lobos.</p>
+      <ul>
+        <li>Contato: ardência e paralisia leve.</li>
+        <li>Ingestão: vômitos, fraqueza muscular.</li>
+        <li>Doses maiores: pode causar falência de órgãos.</li>
+      </ul>
+      <p>Usos: armadilhas e elixires. Proibida em algumas regiões.</p>
+      <p><strong>Bala de prata:</strong><br>
+        Nível 1: mata.<br>
+        Níveis 2 e 3: dor extrema e perda de controle dos poderes.<br>
+        Níveis 4 e 5: sem efeito.</p>
     </div>
 
     <button class="accordion">👹 Influência Espiritual em Lirion</button>
     <div class="panel">
-      <p><strong>Renegados:</strong> Lugares consagrados...</p>
+      <p><strong>Renegados:</strong> Lugares consagrados os enfraquecem (templos e santuários).</p>
+      <p><strong>Nefilins:</strong> Lugares amaldiçoados obscurecem seus dons e causam pesadelos.</p>
+      <p><strong>Bruxas e Magos:</strong></p>
+      <ul>
+        <li>Corpos humanos, sujeitos a morte física.</li>
+        <li>Cinzas de cadáveres: desestabilizam o fluxo místico.</li>
+        <li>Sal: corta ou neutraliza a magia temporariamente.</li>
+        <li>Verbena: catalisador herbal com propriedades purificadoras.</li>
+      </ul>
+      <p>Esta combinação afeta seus poderes temporariamente.</p>
     </div>
   </div>
 
-  <!-- Menu flutuante mágico -->
   <div class="floating-menu">
     <a href="reino.html">🏰 Reino</a>
     <a href="historia.html">📖 História</a>
@@ -198,7 +234,6 @@
     <a href="index.html">🔙 Início</a>
   </div>
 
-  <!-- Script para accordion -->
   <script>
     const acc = document.getElementsByClassName("accordion");
     for (let i = 0; i < acc.length; i++) {
@@ -211,4 +246,5 @@
   </script>
 </body>
 </html>
+
 

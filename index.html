@@ -1,188 +1,260 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reino de Lirion</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curiosidades Sobrenaturais</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <!-- Fonte medieval -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    body {
+      background-color: #0d0c1d;
+      font-family: 'Segoe UI', sans-serif;
+      color: #ffffff;
+      position: relative;
+      min-height: 100vh;
+      padding: 20px;
+      padding-bottom: 120px; /* espaço extra para o menu flutuante */
+    }
 
-    <style>
-      /* EFEITO DE NEBLINA */
-      .neblina {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 200%;
-        height: 200%;
-        background: url('assets/img/neblina.png') repeat;
-        background-size: cover;
-        opacity: 0.12;
-        animation: moverNeblina 60s linear infinite;
-        pointer-events: none;
-        z-index: 0;
+    .fog {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 100%;
+      background-image: url('assets/img/neblina.png');
+      background-repeat: repeat;
+      opacity: 0.3;
+      animation: moveFog 60s linear infinite;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @keyframes moveFog {
+      from {
+        transform: translateX(0);
       }
-
-      @keyframes moverNeblina {
-        from {
-          transform: translateX(0) translateY(0);
-        }
-        to {
-          transform: translateX(-60px) translateY(-40px);
-        }
+      to {
+        transform: translateX(-50%);
       }
+    }
 
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Cinzel', serif;
-        background-color: #0d0c1d;
-        color: #ffffff;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        background-image: url('assets/img/lirion.fundo.png');
-        background-size: cover;
-        background-position: center;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-      }
+    .content {
+      position: relative;
+      z-index: 2;
+    }
 
-      h1 {
-        font-size: 3rem;
-        color: #a68eff;
-        text-shadow: 0 0 15px #6e63d6;
-        z-index: 1;
-      }
+    h1 {
+      font-size: 2.4rem;
+      color: #a68eff;
+      text-align: center;
+      margin-bottom: 30px;
+      text-shadow: 0 0 15px #6e63d6;
+    }
 
-      p {
-        max-width: 600px;
-        font-size: 1.2rem;
-        line-height: 1.6;
-        color: #dcdcdc;
-        margin: 20px 0;
-        text-shadow: 0 0 5px #000;
-        z-index: 1;
-      }
+    .accordion-group {
+      margin-bottom: 15px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 12px rgba(166, 142, 255, 0.1);
+    }
 
-      .btn-explorar {
-        background-color: #6e63d6;
-        color: white;
-        padding: 12px 24px;
-        font-size: 1rem;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-        box-shadow: 0 0 10px rgba(166, 142, 255, 0.5);
-        text-decoration: none;
-        font-family: 'Cinzel', serif;
-        margin-top: 10px;
-        z-index: 1;
-      }
+    .accordion {
+      background-color: #1a182e;
+      color: #fff;
+      cursor: pointer;
+      padding: 15px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      transition: 0.3s;
+      font-size: 1.1rem;
+      border-bottom: 1px solid #3a3563;
+    }
 
-      .btn-explorar:hover {
-        background-color: #a68eff;
-        transform: scale(1.05);
-      }
+    .accordion:hover {
+      background-color: #28244a;
+    }
 
-      .btn-som {
-        margin-top: 20px;
-        background-color: transparent;
-        color: #a68eff;
-        border: 2px solid #a68eff;
-        padding: 10px 20px;
-        font-size: 1.1rem;
-        font-family: 'Cinzel', serif;
-        cursor: pointer;
-        border-radius: 10px;
-        box-shadow: 0 0 12px rgba(166, 142, 255, 0.4);
-        transition: all 0.3s ease;
-        text-shadow: 0 0 5px #6e63d6;
-        z-index: 1;
-      }
+    .accordion.active {
+      background-color: #3a3563;
+    }
 
-      .btn-som:hover {
-        background-color: #a68eff;
-        color: #0d0c1d;
-        transform: scale(1.05);
-      }
+    .panel {
+      padding: 15px;
+      display: none;
+      background-color: #2c2947;
+      color: #dcdcdc;
+      text-align: justify;
+    }
 
-      /* MENU FLUTUANTE */
-      .menu-flutuante {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: rgba(30, 25, 60, 0.8);
-        border-radius: 12px;
-        padding: 10px;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        box-shadow: 0 0 12px rgba(166, 142, 255, 0.5);
-        z-index: 100;
-      }
+    .chat-message {
+      background-color: #1a182e;
+      border: 1px solid #3a3563;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 12px rgba(166, 142, 255, 0.1);
+    }
 
-      .menu-flutuante a,
-      .menu-flutuante button {
-        background: none;
-        border: none;
-        color: #a68eff;
-        font-size: 1.5rem;
-        cursor: pointer;
-        transition: transform 0.2s ease;
-        text-decoration: none;
-      }
+    .chat-message h2 {
+      color: #a68eff;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px #6e63d6;
+    }
 
-      .menu-flutuante a:hover,
-      .menu-flutuante button:hover {
-        transform: scale(1.2);
-        color: #ffffff;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="neblina"></div>
+    .chat-message p,
+    .chat-message ul {
+      color: #dcdcdc;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
 
-    <h1>Bem-vindo ao Reino de Lirion</h1>
-    <p>
-      Um lugar de magia, segredos antigos e heróis esquecidos. Prepare-se para explorar as profundezas de um mundo onde o tempo dança com as estrelas.
-    </p>
+    .floating-menu {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      gap: 15px;
+      background-color: rgba(13, 12, 29, 0.8);
+      padding: 10px 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(166, 142, 255, 0.4);
+      backdrop-filter: blur(6px);
+    }
 
-    <a href="reino.html" class="btn-explorar">✨ Explorar o Reino</a>
-    <button class="btn-som" id="botao-som">🔊 Desperte os Sons de Lirion</button>
+    .floating-menu a {
+      background-color: #6e63d6;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 0 8px rgba(166, 142, 255, 0.5);
+    }
 
-    <audio id="audio-lirion" loop>
-      <source src="assets/audio/audiolirion.6.mp3" type="audio/mpeg" />
-      Seu navegador não suporta o elemento de áudio.
-    </audio>
+    .floating-menu a:hover {
+      background-color: #a68eff;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="fog"></div>
 
-    <!-- MENU FLUTUANTE -->
-    <div class="menu-flutuante">
-      <a href="index.html" title="Início">🏰</a>
-      <a href="reino.html" title="História">📜</a>
-      <a href="racas.html" title="Raças">🧛‍♂️</a>
-      <a href="titulos.html" title="Títulos">🌟</a>
-      <a href="cronicas.html" title="Crônicas">🌒</a>
-      <button onclick="document.getElementById('audio-lirion').paused ? document.getElementById('audio-lirion').play() : document.getElementById('audio-lirion').pause();" title="Som">🔊</button>
+  <audio autoplay loop>
+    <source src="assets/audio/audiolirion.2.mp3" type="audio/mpeg" />
+    Seu navegador não suporta o elemento de áudio.
+  </audio>
+
+  <div class="content">
+    <h1>Curiosidades do Mundo de Lirion</h1>
+
+    <div class="chat-message">
+      <div class="message-content">
+        <h2>📜 Regras de Hereditariedade Sobrenatural & Transformação</h2>
+        <!-- Conteúdo do chat-message aqui se necessário -->
+      </div>
     </div>
 
-    <script>
-      document.getElementById('botao-som').addEventListener('click', () => {
-        const audio = document.getElementById("audio-lirion");
-        audio.play().then(() => {
-          console.log("Áudio iniciado com sucesso.");
-        }).catch((error) => {
-          console.error("Erro ao tentar tocar o áudio:", error);
-          alert("⚠️ O navegador bloqueou o som. Tente clicar novamente.");
-        });
+    <div class="accordion-group">
+      <button class="accordion">🗺️ Lore e Nível Inicial (Importante para Jogadores)</button>
+      <div class="panel">
+        <p>🧙‍♀️ Bruxas: podem viver séculos. Caso pareça jovem com 100+ anos, justifique com alguma história.</p>
+        <p>🧛‍♂️ Vampiros: imortais. Padrão de idade: até 1000 anos. Acima disso, precisa de história excepcional.</p>
+        <p>🐺 Lobos: vivem até 150 anos. Mais velhos que isso, precisam justificar se forem da linhagem de Caim.</p>
+        <p>👼 Nefilins: longevos. Acima de 150 anos exige conexão com Arkh’al ou guerras celestiais.</p>
+        <p>👹 Renegados: são imortais e monstruosos. Descreva aparência real e forma disfarçada.</p>
+      </div>
+    </div>
+
+    <div class="accordion-group">
+      <button class="accordion">🛠️ Dicas de Criação de Personagem</button>
+      <div class="panel">
+        <p>💠 Combine raça, origem e idade com um bom histórico e coerência no mundo de Lirion.</p>
+        <p>📜 Justifique poderes perdidos ou limitações com eventos importantes na vida do personagem.</p>
+        <p>⚖️ Evite exageros sem embasamento. Um personagem poderoso precisa de um bom motivo para estar no nível 1.</p>
+      </div>
+    </div>
+
+    <div class="accordion-group">
+      <button class="accordion">🩸 Fraqueza dos Vampiros: Verbena</button>
+      <div class="panel">
+        <p><strong>Descrição:</strong> A Verbena é uma planta que desestabiliza os vampiros.</p>
+        <ul>
+          <li>Contato direto: queima como ácido leve.</li>
+          <li>Ingestão: enfraquece os sentidos e bloqueia poderes.</li>
+          <li>Inalação prolongada: causa delírios e desmaios.</li>
+        </ul>
+        <p>Usos comuns: perfumes, colares, incensos, dardos de caçadores.</p>
+        <p><strong>Estaca de madeira:</strong><br>
+          Nível 1: mata.<br>
+          Níveis 2 e 3: dissecam o vampiro.<br>
+          Níveis 4 e 5: sem efeito.</p>
+      </div>
+    </div>
+
+    <div class="accordion-group">
+      <button class="accordion">🐺 Fraqueza dos Lobos: Mata-lobos</button>
+      <div class="panel">
+        <p><strong>Descrição:</strong> Planta venenosa bela, porém mortal para lobos.</p>
+        <ul>
+          <li>Contato: ardência e paralisia leve.</li>
+          <li>Ingestão: vômitos, fraqueza muscular.</li>
+          <li>Doses maiores: pode causar falência de órgãos.</li>
+        </ul>
+        <p>Usos: armadilhas e elixires. Proibida em algumas regiões.</p>
+        <p><strong>Bala de prata:</strong><br>
+          Nível 1: mata.<br>
+          Níveis 2 e 3: dor extrema e perda de controle dos poderes.<br>
+          Níveis 4 e 5: sem efeito.</p>
+      </div>
+    </div>
+
+    <div class="accordion-group">
+      <button class="accordion">👹 Influência Espiritual em Lirion</button>
+      <div class="panel">
+        <p><strong>Renegados:</strong> Lugares consagrados os enfraquecem (templos e santuários).</p>
+        <p><strong>Nefilins:</strong> Lugares amaldiçoados obscurecem seus dons e causam pesadelos.</p>
+        <p><strong>Bruxas e Magos:</strong></p>
+        <ul>
+          <li>Corpos humanos, sujeitos a morte física.</li>
+          <li>Cinzas de cadáveres: desestabilizam o fluxo místico.</li>
+          <li>Sal: corta ou neutraliza a magia temporariamente.</li>
+          <li>Verbena: catalisador herbal com propriedades purificadoras.</li>
+        </ul>
+        <p>Esta combinação afeta seus poderes temporariamente.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="floating-menu">
+    <a href="reino.html">🏰 Reino</a>
+    <a href="historia.html">📖 História</a>
+    <a href="mapa.html">🗺️ Mapa</a>
+    <a href="index.html">🔙 Início</a>
+  </div>
+
+  <script>
+    const acc = document.getElementsByClassName("accordion");
+    for (let i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        panel.style.display = panel.style.display === "block" ? "none" : "block";
       });
-    </script>
-  </body>
+    }
+  </script>
+</body>
 </html>
 
 
